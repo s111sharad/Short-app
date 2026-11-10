@@ -60,7 +60,7 @@ if st.button("ऑटोमैटिक स्क्रिप्ट तैया�
         target_topic = st.session_state.get('best_keyword', keyword_idea)
         with st.spinner(f"'{target_topic}' के लिए स्क्रिप्ट तैयार की जा रही है..."):
             try:
-                genai.configure(api_key=gemini_api_key)
+                model = genai.GenerativeModel('gemini-pro')
                 model = genai.GenerativeModel('gemini-1.5-flash')
                 prompt = f"""
                 तुम एक एक्सपर्ट YouTube Shorts प्रोड्यूसर हो। मेरा चैनल '{channel_niche}' है और स्टाइल '{video_style}' है।
